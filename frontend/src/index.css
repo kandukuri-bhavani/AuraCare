@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-800 antialiased font-sans selection:bg-clinic-200 selection:text-clinic-900;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-sans font-semibold tracking-tight text-slate-900;
+  }
+}
+
+@layer components {
+  /* Premium Glassmorphism Cards */
+  .glass-card {
+    @apply bg-white/85 backdrop-blur-md border border-slate-100/50 shadow-soft rounded-2xl transition-all duration-300;
+  }
+  
+  .glass-card:hover {
+    @apply shadow-premium border-clinic-100/60 -translate-y-0.5;
+  }
+  
+  /* Modern clean interactive buttons */
+  .btn-primary {
+    @apply px-5 py-2.5 bg-clinic-700 hover:bg-clinic-800 text-white rounded-xl font-medium shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-clinic-500 focus:ring-offset-2 flex items-center justify-center gap-2;
+  }
+  
+  .btn-secondary {
+    @apply px-5 py-2.5 bg-white border border-slate-200 text-slate-700 hover:bg-slate-50 hover:text-slate-900 rounded-xl font-medium shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center gap-2;
+  }
+  
+  .btn-emergency {
+    @apply px-5 py-2.5 bg-emergency-600 hover:bg-emergency-700 text-white rounded-xl font-medium shadow-md hover:shadow-lg transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-emergency-500 focus:ring-offset-2 flex items-center justify-center gap-2 animate-pulse;
+  }
+  
+  .btn-success {
+    @apply px-5 py-2.5 bg-sage-600 hover:bg-sage-700 text-white rounded-xl font-medium shadow-sm transition-all duration-200 focus:outline-none flex items-center justify-center gap-2;
+  }
+  
+  /* Input layouts */
+  .input-field {
+    @apply w-full px-4 py-2.5 bg-slate-50/50 border border-slate-200 rounded-xl focus:bg-white focus:outline-none focus:border-clinic-500 focus:ring-2 focus:ring-clinic-100 transition-all duration-150 placeholder:text-slate-400;
+  }
+  
+  .input-label {
+    @apply block text-sm font-medium text-slate-600 mb-1.5;
+  }
+
+  /* Badge styling */
+  .badge-scheme {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-clinic-50 text-clinic-700 border border-clinic-100;
+  }
+  
+  .badge-emergency {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-emergency-50 text-emergency-600 border border-emergency-100;
+  }
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-slate-100/50;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-slate-300 rounded-full hover:bg-slate-400 transition-all duration-150;
+}
